@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+:root {
+  --color-eggshell: #f3e5d7;
+  --color-dark-charcoal: #312e2c;
+  --color-dark-raspberry: #7a284e;
+  --color-brandy-red: #854632;
+  --color-wenge-brown: #5f564d;
+  --color-white-coffee: #e3ddd7;
+  --color-snow: #fff7fb;
+  --color-white: #ffffff;
+}
+
+:root {
+  --size-heading-l: 2.5rem;
+  --size-heading-m: 1.75rem;
+  --size-heading-s: 1.25rem;
+  --size-body: 1rem;
+  --len-xxl: 2.5rem;
+  --len-xl: 2rem;
+  --len-l: 1.75rem;
+  --len-m: 1.5rem;
+  --len-s: 1rem;
+  --len-xs: 0.75rem;
+  --len-xxs: 0.5rem;
+}
+
+/* css reset begins */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* css reset ends */
+
+/* selector css */
+
+body {
+  background-color: var(--color-eggshell);
+  color: var(--color-wenge-brown);
+  display: flex;
+  flex-flow: column nowrap;
+  font: 400 var(--size-body)/1.5 'Outfit', sans-serif;
+  padding: 7.6875rem 0;
+  place-items: center;
+}
+
+h1 {
+  color: var(--color-dark-charcoal);
+  font: var(--size-heading-l)/1 'Young Serif', serif;
+  margin: 0 0 var(--len-m) 0;
+}
+
+h2 {
+  color: var(--color-brandy-red);
+  font: var(--size-heading-m)/1 'Young Serif', serif;
+  margin: 0 0 var(--len-m) 0;
+}
+
+h3 {
+  font: 500 var(--size-heading-s)/1 'Outfit', sans-serif;
+  margin: 0 0 var(--len-s) 0;
+}
+
+ul, ol {
+  display: grid;
+  gap: var(--len-xxs);
+  list-style-position: inside;
+  padding: 0;
+}
+
+
+ul > li {
+  left: var(--len-xxl);
+  position: relative;
+  text-indent: -2rem;
+  width: calc(100% - var(--len-xxl));
+}
+
+ul > li::marker {
+  content: '•     ';
+}
+
+ol > li {
+  left: var(--len-xxl);
+  position: relative;
+  text-indent: -2.1rem;
+  width: calc(100% - var(--len-xxl));
+}
+
+ol > li::marker {
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-white-coffee)
+}
+
+li::before {
+  content: "";
+  width: 1rem;
+  display: inline-block;
+}
+
+
+/* class css */
+.attribution {
+  display: none;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 1.5rem;
+  display: grid;
+  gap: var(--len-xxl);
+  grid: auto-flow / 1fr;
+  flex-flow: column;
+  max-width: 736px;
+  padding: var(--len-xxl);
+}
+
+.card img {
+  border-radius: var(--len-xs);
+}
+
+.text-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.preparation {
+  background-color: var(--color-snow);
+  border-radius: var(--len-xxs);
+  padding: var(--len-l)
+}
+
+.preparation h3,
+.preparation li::marker {
+  color: var(--color-dark-raspberry);
+}
+
+.preparation li span {
+  font-weight: 600;
+}
+
+.ingredients li::marker,
+.instructions li::marker {
+  color: var(--color-brandy-red);
+}
+
+.instructions li span {
+  font-weight: 600;
+}
+
+.nutrition table {
+  border-collapse: collapse;
+  margin-top: var(--len-xs);
+  table-layout: fixed;
+  width: 100%;
+}
+
+.nutrition table tr+tr {
+  border-top: 1px solid var(--color-white-coffee);
+}
+
+.nutrition table td {
+  padding: var(--len-xs) var(--len-xxs);
+}
+
+.nutrition table tr td:first-child {
+  padding-left: var(--len-xl);
+}
+
+.nutrition table tr td:last-child {
+  color: var(--color-brandy-red);
+  font-weight: 600;
+  padding-right: var(--len-xl); 
+}
+
+.nutrition table tr:last-child td {
+  padding-bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  
+  .card {
+    border-radius: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .text-content {
+    padding: var(--len-xxl) var(--len-xl);
+  }
+}
